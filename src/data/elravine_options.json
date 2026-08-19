@@ -1,0 +1,600 @@
+{
+  "meta": {
+    "complex": "래미안 엘라빈 (방화6단지)",
+    "unit": "전용 115㎡",
+    "source": "EL-RAVINE index.html",
+    "note": "VAT 포함, 단위 원. 이미지는 vrapoint CDN 규칙으로 생성",
+    "image_template": "https://cdn.vrapoint.co.kr/projects/banghwa6/union/260629/popup/115_0_opt_{n}_{v}.webp"
+  },
+  "categories": [
+    {
+      "id": "space",
+      "name": "공간",
+      "sort_order": 1
+    },
+    {
+      "id": "furniture",
+      "name": "가구",
+      "sort_order": 2
+    },
+    {
+      "id": "finish",
+      "name": "마감",
+      "sort_order": 3
+    },
+    {
+      "id": "appliance",
+      "name": "가전",
+      "sort_order": 4
+    },
+    {
+      "id": "light",
+      "name": "조명",
+      "sort_order": 5
+    }
+  ],
+  "options": [
+    {
+      "id": "clean",
+      "category_id": "space",
+      "name": "클린현관",
+      "detail": "공기청정시스템",
+      "price": 1360000,
+      "is_choice": false,
+      "variants": null,
+      "free": false,
+      "vr_number": 1,
+      "before_image": "https://cdn.vrapoint.co.kr/projects/banghwa6/union/260629/popup/115_0_opt_1_0.webp",
+      "after_image": "https://cdn.vrapoint.co.kr/projects/banghwa6/union/260629/popup/115_0_opt_1_2.webp",
+      "before_text": "현관에는 신발장만 있고 별도 설비가 없습니다.",
+      "after_text": "현관에 공기청정 시스템이 들어가 외출 후 먼지를 털어내고 들어옵니다.",
+      "cautions": [
+        "현관자동중문과 중복 선택할 수 없습니다.",
+        "선택 시 신발장 구성이 변경될 수 있습니다.",
+        "조명을 켜고 공기청정 기능을 사용해야 효과가 있으며, 기밀 구조 때문에 문 닫힘이 약할 수 있습니다."
+      ],
+      "mark": "①",
+      "star": false
+    },
+    {
+      "id": "door",
+      "category_id": "space",
+      "name": "현관자동중문",
+      "detail": "현관중문(자동)",
+      "price": 870000,
+      "is_choice": false,
+      "variants": null,
+      "free": false,
+      "vr_number": 1,
+      "before_image": "https://cdn.vrapoint.co.kr/projects/banghwa6/union/260629/popup/115_0_opt_1_0.webp",
+      "after_image": "https://cdn.vrapoint.co.kr/projects/banghwa6/union/260629/popup/115_0_opt_1_2.webp",
+      "before_text": "현관과 거실이 트여 있어 냉난방과 시선이 그대로 이어집니다.",
+      "after_text": "자동으로 열리는 중문이 생겨 현관이 분리됩니다. 냉난방 효율과 프라이버시가 좋아집니다.",
+      "cautions": [
+        "클린현관과 현관자동중문 옵션은 중복 선택이 불가합니다.",
+        "해당 옵션 선택 시 현관 쪽 신발장 구성이 자동중문에 맞게 변경되며, 붙박이 신발장은 단변형으로 적용됩니다."
+      ],
+      "mark": null,
+      "star": false
+    },
+    {
+      "id": "multi",
+      "category_id": "space",
+      "name": "멀티룸",
+      "detail": "3연동 슬라이딩도어",
+      "price": 890000,
+      "is_choice": false,
+      "variants": null,
+      "free": false,
+      "vr_number": 3,
+      "before_image": "https://cdn.vrapoint.co.kr/projects/banghwa6/union/260629/popup/115_0_opt_3_0.webp",
+      "after_image": "https://cdn.vrapoint.co.kr/projects/banghwa6/union/260629/popup/115_0_opt_3_1.webp",
+      "before_text": "침실3이 벽과 여닫이문으로 막힌 독립된 방입니다.",
+      "after_text": "3연동 슬라이딩도어로 바뀝니다. 문을 접으면 거실과 하나로 이어지고, 닫으면 방이 됩니다. 공간 활용이 유연하지만 벽 대비 차음 성능은 떨어집니다.",
+      "cautions": [
+        "해당 옵션 선택 시 설치되는 슬라이딩 도어의 세부 디테일 및 형상, 제조사 등은 변경될 수 있습니다.",
+        "해당 옵션 선택 시, 공간상의 이유로 배선기구, 스프링클러, 환기디퓨저, 감지기, 조명기구의 배치 및 수량이 달라질 수 있습니다."
+      ],
+      "mark": "③",
+      "star": true
+    },
+    {
+      "id": "next",
+      "category_id": "space",
+      "name": "넥스트퍼니처",
+      "detail": "통합침실 + 넥스트퍼니처 + 침실1·2 매립형 다운라이트",
+      "price": 7010000,
+      "is_choice": false,
+      "variants": null,
+      "free": false,
+      "vr_number": 4,
+      "before_image": "https://cdn.vrapoint.co.kr/projects/banghwa6/union/260629/popup/115_0_opt_4_0.webp",
+      "after_image": "https://cdn.vrapoint.co.kr/projects/banghwa6/union/260629/popup/115_0_opt_4_1.webp",
+      "before_text": "침실이 각각 나뉘어 있고 붙박이 가구 없이 빈 벽으로 인도됩니다.",
+      "after_text": "침실을 통합하고 붙박이 가구가 들어가며, 침실1·2에는 매립형 다운라이트가 함께 시공됩니다. (감성조명 다운라이트와는 다른, 기본형 매립등입니다) 수납과 디자인이 통일되지만, 이후 가구 재배치가 어렵습니다.",
+      "cautions": [
+        "해당 옵션 선택 시 침실 붙박이장은 제공되지 않습니다. 미선택 시에는 침실2에 붙박이장 1개소가 제공되며, 설치 위치는 고객 요청에 의해 변경할 수 없습니다.",
+        "해당 옵션 선택 시 커튼박스 형태가 상이할 수 있습니다."
+      ],
+      "mark": "④",
+      "star": true
+    },
+    {
+      "id": "kitchen",
+      "category_id": "space",
+      "name": "대면형주방",
+      "detail": "대면형 외산 주방 + 독립형 후드 + 툴장 추가 + 반건식세탁실 + 수납가구",
+      "price": 9950000,
+      "is_choice": false,
+      "variants": null,
+      "free": false,
+      "vr_number": 5,
+      "before_image": "https://cdn.vrapoint.co.kr/projects/banghwa6/union/260629/popup/115_0_opt_5_0.webp",
+      "after_image": "https://cdn.vrapoint.co.kr/projects/banghwa6/union/260629/popup/115_0_opt_5_1.webp",
+      "before_text": "주방이 벽을 보고 서는 일자형이고, 세탁실은 기본 마감입니다.",
+      "after_text": "거실을 바라보는 대면형 주방으로 바뀌고 독립형 후드·툴장·반건식 세탁실·수납가구가 더해집니다. 개방감과 소통이 좋아지지만, 조리 냄새가 거실로 퍼지기 쉽습니다.",
+      "cautions": [
+        "해당 옵션 선택 시 싱크대, 후드, 세탁실 바닥 단차, 배수구 위치가 변동됩니다.",
+        "해당 옵션 선택 시 팬트리, 발코니의 벽, 바닥, 천장 마감재의 범위가 변경될 수 있습니다."
+      ],
+      "mark": "⑥",
+      "star": true
+    },
+    {
+      "id": "boutique",
+      "category_id": "space",
+      "name": "부티크 드레스룸 & 욕실",
+      "detail": "드레스룸: 벽판넬식 시스템가구(화장대 포함) + AL슬라이딩도어 / 욕실2: 슬라이딩 욕실문 + 카운터형 세면대·디자인 거울·여닫이 욕실장",
+      "price": 10120000,
+      "is_choice": false,
+      "variants": null,
+      "free": false,
+      "vr_number": 17,
+      "before_image": "https://cdn.vrapoint.co.kr/projects/banghwa6/union/260629/popup/115_0_opt_17_0.webp",
+      "after_image": "https://cdn.vrapoint.co.kr/projects/banghwa6/union/260629/popup/115_0_opt_17_1.webp",
+      "before_text": "드레스룸은 선반·행거 위주, 부부욕실은 기본 도기와 여닫이문 구성입니다.",
+      "after_text": "화장대를 포함한 벽판넬식 시스템가구와 AL 슬라이딩도어가 들어가고, 부부욕실은 슬라이딩 욕실문·카운터형 세면대·디자인 거울·여닫이장으로 바뀝니다.",
+      "cautions": [
+        "해당 옵션 선택 시, 화장대 및 드레스룸 공간, 욕실2 양변기 및 세면대 등의 위치가 기본형과 상이합니다."
+      ],
+      "mark": "⑤",
+      "star": false
+    },
+    {
+      "id": "kfurn",
+      "category_id": "furniture",
+      "name": "외산주방가구 고급형",
+      "detail": null,
+      "price": 12370000,
+      "is_choice": true,
+      "variants": [
+        {
+          "id": "a",
+          "name": "외산주방가구 고급형",
+          "detail": "외산주방가구 고급형 + 외산후드",
+          "price": 19660000,
+          "after": "일자형 주방 그대로, 가구와 후드를 외산 고급형으로 전부 교체합니다."
+        },
+        {
+          "id": "b",
+          "name": "외산주방가구 고급형(대면형주방)",
+          "detail": "외산주방가구 고급형(대면형) + 외산후드독립형",
+          "price": 12370000,
+          "after": "대면형 주방 배치에 맞춘 외산 가구와 독립형 후드로 구성됩니다."
+        }
+      ],
+      "free": false,
+      "vr_number": 7,
+      "before_image": "https://cdn.vrapoint.co.kr/projects/banghwa6/union/260629/popup/115_0_opt_7_0.webp",
+      "after_image": "https://cdn.vrapoint.co.kr/projects/banghwa6/union/260629/popup/115_0_opt_7_1.webp",
+      "before_text": "기본 제공 주방가구와 빌트인 후드가 설치됩니다.",
+      "after_text": null,
+      "cautions": [
+        "해당 옵션 선택 시, 기본형과 디자인·세부 색상·구성·디테일·악세서리 등이 상이하며, 상부장 하부조명·싱크볼·벽면마감 판넬 등은 외산 브랜드(Nolte) 제품이 아닙니다.",
+        "키친허브, 대면형 주방 옵션과 중복 선택 시, 해당 옵션의 가구 또한 외산주방가구 고급형으로 설치됩니다. (벽면판넬 제외)"
+      ],
+      "mark": null,
+      "star": false
+    },
+    {
+      "id": "bedroom",
+      "category_id": "furniture",
+      "name": "안방수납강화",
+      "detail": "슬라이딩도어 + 벽판넬식 시스템가구",
+      "price": 2320000,
+      "is_choice": false,
+      "variants": null,
+      "free": false,
+      "vr_number": 10,
+      "before_image": "https://cdn.vrapoint.co.kr/projects/banghwa6/union/260629/popup/115_0_opt_10_0.webp",
+      "after_image": "https://cdn.vrapoint.co.kr/projects/banghwa6/union/260629/popup/115_0_opt_10_1.webp",
+      "before_text": "안방에 붙박이장 없이 벽면이 비어 있어 가구를 따로 사서 채워야 합니다.",
+      "after_text": "슬라이딩도어와 벽판넬식 시스템가구로 안방 수납이 벽면 전체로 확장됩니다. 수납량이 크게 늘지만, 해당 벽면에 별도 가구를 배치할 수 없습니다.",
+      "cautions": [
+        "해당 옵션 선택 시, 안방 공간 축소로 소유하신 침대 등의 배치가 어려울 수 있으니, 선택 전 견본주택에서 확인 바랍니다.",
+        "슬라이딩 도어의 하부레일은 바닥마감과 단차가 발생할 수 있습니다."
+      ],
+      "mark": "②",
+      "star": false
+    },
+    {
+      "id": "tile",
+      "category_id": "finish",
+      "name": "대형타일 아트월",
+      "detail": null,
+      "price": 0,
+      "is_choice": true,
+      "variants": [
+        {
+          "id": "R",
+          "name": "R Style",
+          "detail": "세라믹 타일 1면",
+          "price": 0,
+          "after": "R 스타일 세라믹 타일로 아트월 1면을 마감합니다."
+        },
+        {
+          "id": "M",
+          "name": "M Style",
+          "detail": "세라믹 타일 1면",
+          "price": 0,
+          "after": "M 스타일 세라믹 타일로 아트월 1면을 마감합니다."
+        },
+        {
+          "id": "A",
+          "name": "A Style",
+          "detail": "세라믹 타일 1면",
+          "price": 0,
+          "after": "A 스타일 세라믹 타일로 아트월 1면을 마감합니다."
+        }
+      ],
+      "free": true,
+      "vr_number": 11,
+      "before_image": "https://cdn.vrapoint.co.kr/projects/banghwa6/union/260629/popup/115_0_opt_11_0.webp",
+      "after_image": "https://cdn.vrapoint.co.kr/projects/banghwa6/union/260629/popup/115_0_opt_11_1.webp",
+      "before_text": "스타일을 고르지 않으면 시공사 기본 구성으로 정해집니다.",
+      "after_text": null,
+      "cautions": [
+        "타일 자재 특성에 따라 실제 타일의 무늬는 일정하지 않을 수 있습니다.",
+        "타일의 설치나누기 및 배치는 본 공사 시 변경될 수 있고, 견본주택과 상이할 수 있습니다."
+      ],
+      "mark": null,
+      "star": false
+    },
+    {
+      "id": "artwall",
+      "category_id": "finish",
+      "name": "거실복도 아트월",
+      "detail": null,
+      "price": 6400000,
+      "is_choice": true,
+      "variants": [
+        {
+          "id": "a",
+          "name": "거실복도 아트월",
+          "detail": "복도·거실·주방 벽판넬 마감 + 아트월 확장",
+          "price": 6810000,
+          "after": "복도부터 거실·주방까지 벽판넬로 이어 마감하고 아트월을 넓힙니다."
+        },
+        {
+          "id": "b",
+          "name": "거실복도 아트월(멀티룸)",
+          "detail": "멀티룸 적용 시 · 복도·거실·주방 벽판넬 마감 + 아트월 확장",
+          "price": 6400000,
+          "after": "멀티룸 개방 구조에 맞춰 벽판넬 마감과 아트월 확장이 적용됩니다."
+        }
+      ],
+      "free": false,
+      "vr_number": null,
+      "before_image": null,
+      "after_image": null,
+      "before_text": "복도와 거실은 도배 마감이고 아트월은 기본 크기입니다.",
+      "after_text": null,
+      "cautions": [
+        "아트월 타일은 단일 스타일(A스타일)로 제공됩니다.",
+        "아트월 및 판넬 설치면은 마감재 두께에 의해 실(복도) 내경이 작아지며, 인접 목창호의 두께·폭·디테일 등이 변경될 수 있습니다.",
+        "멀티룸 옵션과 중복 선택 시, 벽판넬 마감 설치 범위가 축소됩니다."
+      ],
+      "mark": "⑧",
+      "star": false
+    },
+    {
+      "id": "nextfloor",
+      "category_id": "finish",
+      "name": "넥스트마루",
+      "detail": "넥스트 Material 마루(Digital VISIONS) · 화이트 오크 / 라이트 그레이 오크 중 선택",
+      "price": 0,
+      "is_choice": false,
+      "variants": null,
+      "free": true,
+      "vr_number": 14,
+      "before_image": "https://cdn.vrapoint.co.kr/projects/banghwa6/union/260629/popup/115_0_opt_14_0.webp",
+      "after_image": "https://cdn.vrapoint.co.kr/projects/banghwa6/union/260629/popup/115_0_opt_14_1.webp",
+      "before_text": "스타일을 고르지 않으면 시공사 기본 구성으로 정해집니다.",
+      "after_text": "화이트 오크 또는 라이트 그레이 오크 중 원하는 색상으로 넥스트마루를 시공합니다. (색상은 아래 메모에 남겨주세요)",
+      "cautions": [
+        "마루는 넥스트마루와 외산 원목마루 중 하나만 시공됩니다.",
+        "옵션 선택 시 단일 품목(색상)의 마루만 선택 가능합니다.",
+        "외산원목마루와 넥스트마루는 마감종류 및 재질이 서로 상이합니다.",
+        "넥스트마루는 원목을 가장 유사하게 표현하는 시공술이 적용되었으나, 원목마루와 색상 및 패턴이 완전히 동일하지는 않습니다."
+      ],
+      "mark": null,
+      "star": false
+    },
+    {
+      "id": "floor",
+      "category_id": "finish",
+      "name": "외산 원목마루",
+      "detail": "광폭 원목마루 · 화이트 오크 / 라이트 그레이 오크 중 선택",
+      "price": 22050000,
+      "is_choice": false,
+      "variants": null,
+      "free": false,
+      "vr_number": 15,
+      "before_image": "https://cdn.vrapoint.co.kr/projects/banghwa6/union/260629/popup/115_0_opt_15_0.webp",
+      "after_image": "https://cdn.vrapoint.co.kr/projects/banghwa6/union/260629/popup/115_0_opt_15_1.webp",
+      "before_text": "무상 제공되는 넥스트마루(강마루)로 전체 바닥이 시공됩니다.",
+      "after_text": "광폭 외산 원목마루로 바닥 전체가 바뀝니다. 화이트 오크 또는 라이트 그레이 오크 중 원하는 색상으로 시공되며(색상은 아래 메모에 남겨주세요), 질감이 뛰어나지만 스크래치·습기 관리가 필요합니다.",
+      "cautions": [
+        "금액이 가장 큰 항목입니다. 선택 시 무상 넥스트마루는 적용되지 않습니다.",
+        "옵션 선택 시 단일 품목(색상)의 마루만 선택 가능합니다.",
+        "VR에서 마루가 한 항목으로 묶여 있어 화면 번호가 넥스트마루와 이어집니다."
+      ],
+      "mark": null,
+      "star": false
+    },
+    {
+      "id": "entry",
+      "category_id": "finish",
+      "name": "현관 고급화",
+      "detail": "현관공틀 + E-스톤 바닥 + 하부조명 + 벽체 가구판넬",
+      "price": 3000000,
+      "is_choice": false,
+      "variants": null,
+      "free": false,
+      "vr_number": 16,
+      "before_image": "https://cdn.vrapoint.co.kr/projects/banghwa6/union/260629/popup/115_0_opt_16_0.webp",
+      "after_image": "https://cdn.vrapoint.co.kr/projects/banghwa6/union/260629/popup/115_0_opt_16_1.webp",
+      "before_text": "현관 바닥은 기본 타일, 벽은 도배 마감입니다.",
+      "after_text": "E-스톤 바닥과 벽체 가구판넬, 하부 간접조명으로 현관 전체를 마감합니다.",
+      "cautions": [
+        "옵션 미선택 시, 이태리산 타일바닥·벽체 도배가 시공됩니다.",
+        "신발장 하부조명은 센서에 의해 작동하며, 별도의 스위치는 미제공입니다."
+      ],
+      "mark": "⑦",
+      "star": false
+    },
+    {
+      "id": "ac",
+      "category_id": "appliance",
+      "name": "천장형 시스템 에어컨",
+      "detail": null,
+      "price": 1680000,
+      "is_choice": true,
+      "variants": [
+        {
+          "id": "a",
+          "name": "일반 무풍 시스템 에어컨",
+          "detail": "1개소(주방) 추가",
+          "price": 1680000,
+          "after": "주방에 무풍 에어컨이 한 대 늘어납니다. 나머지 6개소는 기본형 그대로입니다. 대면형주방 선택 시 주방 냉방이 특히 유용합니다."
+        },
+        {
+          "id": "b",
+          "name": "인피니트 AI 무풍 시스템 에어컨",
+          "detail": "1개소(주방) 추가 + 6개소 업그레이드(거실·주방·안방·침실1·2·3)",
+          "price": 5050000,
+          "after": "주방을 포함한 7개소가 모두 AI 무풍 모델로 통일됩니다."
+        }
+      ],
+      "free": false,
+      "vr_number": 18,
+      "before_image": "https://cdn.vrapoint.co.kr/projects/banghwa6/union/260629/popup/115_0_opt_18_0.webp",
+      "after_image": "https://cdn.vrapoint.co.kr/projects/banghwa6/union/260629/popup/115_0_opt_18_1.webp",
+      "before_text": "거실·안방·침실에 기본형 시스템 에어컨이 설치되고, 주방에는 에어컨이 없습니다.",
+      "after_text": null,
+      "cautions": [
+        "세대별/평형별 선택 옵션에 따라 시스템에어컨 수량 및 냉방 용량에 차이가 있을 수 있습니다. (115타입 기준, 옵션 미선택 시 일반 무풍 천장형 시스템 에어컨 5개소가 설치되고, 일반 무풍 옵션은 1개소(주방) 추가, Infinite AI 무풍 옵션은 1개소(주방) 추가 + 6개소 업그레이드입니다)",
+        "천장형 시스템 에어컨 옵션의 세부사항은 추가 선택품목 계약 시 별도 안내 예정입니다.",
+        "천장형 에어컨의 설치위치는 실시공 시 변경될 수 있습니다."
+      ],
+      "mark": null,
+      "star": false
+    },
+    {
+      "id": "induction",
+      "category_id": "appliance",
+      "name": "인피니트 인덕션",
+      "detail": "인덕션 3구(플렉스존) / 삼성전자",
+      "price": 1330000,
+      "is_choice": false,
+      "variants": null,
+      "free": false,
+      "vr_number": 19,
+      "before_image": "https://cdn.vrapoint.co.kr/projects/banghwa6/union/260629/popup/115_0_opt_19_0.webp",
+      "after_image": "https://cdn.vrapoint.co.kr/projects/banghwa6/union/260629/popup/115_0_opt_19_1.webp",
+      "before_text": "기본형 인덕션이 설치됩니다.",
+      "after_text": "플렉스존이 있는 3구 인덕션으로 교체됩니다.",
+      "cautions": [
+        "해당 옵션 미선택 시 일반 인덕션 3구가 설치됩니다.",
+        "관련 법규 개정 등으로 제품 사양 변경 시 모델명 및 에너지소비효율이 변경될 수 있습니다.",
+        "입주 시점이 아닌 공사 일정에 맞춰 생산된 제품이 설치되며, 안내 이미지와 상이할 수 있습니다."
+      ],
+      "mark": null,
+      "star": false
+    },
+    {
+      "id": "dish",
+      "category_id": "appliance",
+      "name": "인피니트 식기세척기",
+      "detail": "식기세척기 14인용 / 삼성전자",
+      "price": 890000,
+      "is_choice": false,
+      "variants": null,
+      "free": false,
+      "vr_number": 20,
+      "before_image": "https://cdn.vrapoint.co.kr/projects/banghwa6/union/260629/popup/115_0_opt_20_0.webp",
+      "after_image": "https://cdn.vrapoint.co.kr/projects/banghwa6/union/260629/popup/115_0_opt_20_1.webp",
+      "before_text": "기본형 식기세척기가 설치됩니다.",
+      "after_text": "14인용 대용량 모델로 교체됩니다.",
+      "cautions": [
+        "84타입 이상 조합세대는 일반 식기세척기 12인용이 기본 제공됩니다.",
+        "84타입 미만 조합세대는 유상옵션으로 선택 가능합니다.",
+        "해당 제품 미적용 시 가구로 마감됩니다.",
+        "제품 성능개선과 관련 법규 개정 등으로 제품 사양 변경 시 모델명 및 에너지소비효율등급이 변경될 수 있습니다."
+      ],
+      "mark": null,
+      "star": false
+    },
+    {
+      "id": "oven",
+      "category_id": "appliance",
+      "name": "인피니트 전기오븐",
+      "detail": null,
+      "price": 590000,
+      "is_choice": true,
+      "variants": [
+        {
+          "id": "a",
+          "name": "선택 1 · 일반 전기오븐 36L",
+          "detail": "삼성전자",
+          "price": 590000,
+          "after": "36L 일반 전기오븐이 빌트인으로 들어갑니다."
+        },
+        {
+          "id": "b",
+          "name": "선택 2 · 인피니트 전기오븐 50L",
+          "detail": "삼성전자",
+          "price": 2480000,
+          "after": "50L 대용량 인피니트 오븐이 빌트인으로 들어갑니다."
+        }
+      ],
+      "free": false,
+      "vr_number": 21,
+      "before_image": "https://cdn.vrapoint.co.kr/projects/banghwa6/union/260629/popup/115_0_opt_21_0.webp",
+      "after_image": "https://cdn.vrapoint.co.kr/projects/banghwa6/union/260629/popup/115_0_opt_21_1.webp",
+      "before_text": "전기오븐 자리는 비어 있고, 필요하면 따로 사서 넣어야 합니다.",
+      "after_text": null,
+      "cautions": [
+        "84타입 미만 조합세대는 일반 전기오븐 36L가 기본제공됩니다.",
+        "해당 제품 미적용 시 가구로 마감됩니다.",
+        "제품 성능개선과 관련 법규 개정 등으로 제품 사양 변경 시 모델명 및 에너지소비효율등급이 변경될 수 있습니다."
+      ],
+      "mark": null,
+      "star": false
+    },
+    {
+      "id": "light",
+      "category_id": "light",
+      "name": "감성조명 다운라이트",
+      "detail": null,
+      "price": 2270000,
+      "is_choice": true,
+      "variants": [
+        {
+          "id": "a",
+          "name": "전체 적용",
+          "detail": "안방·침실1·침실2·침실3 다운라이트",
+          "price": 3790000,
+          "after": "안방과 침실 세 곳 모두 매입형 다운라이트로 바뀝니다."
+        },
+        {
+          "id": "b",
+          "name": "넥스트퍼니처 적용 시",
+          "detail": "안방·침실3 다운라이트",
+          "price": 2270000,
+          "after": "넥스트퍼니처에 포함되지 않은 안방과 침실3에만 다운라이트를 넣습니다."
+        }
+      ],
+      "free": false,
+      "vr_number": 23,
+      "before_image": "https://cdn.vrapoint.co.kr/projects/banghwa6/union/260629/popup/115_0_opt_23_0.webp",
+      "after_image": "https://cdn.vrapoint.co.kr/projects/banghwa6/union/260629/popup/115_0_opt_23_1.webp",
+      "before_text": "침실에는 천장 등 하나만 달린 기본 조명입니다.",
+      "after_text": null,
+      "cautions": [
+        "안방과 침실에 색온도 및 조도 조절이 가능한 감성조명 다운라이트가 설치되며, 타입별로 설치되는 조명의 수량이 상이합니다.",
+        "해당 옵션 미선택 시 기본형 직부등이 설치되며, 세대 타입별 수량 및 형태가 상이할 수 있습니다.",
+        "해당 옵션 선택 시 스위치의 개소 및 기능이 변경될 수 있으며, 스프링클러·감지기·환기디퓨저 등의 배치가 변경될 수 있습니다."
+      ],
+      "mark": null,
+      "star": false
+    },
+    {
+      "id": "dining",
+      "category_id": "light",
+      "name": "식탁조명 고급화",
+      "detail": "외산 펜던트 식탁 조명_플로스 1800",
+      "price": 4600000,
+      "is_choice": false,
+      "variants": null,
+      "free": false,
+      "vr_number": 24,
+      "before_image": "https://cdn.vrapoint.co.kr/projects/banghwa6/union/260629/popup/115_0_opt_24_0.webp",
+      "after_image": "https://cdn.vrapoint.co.kr/projects/banghwa6/union/260629/popup/115_0_opt_24_1.webp",
+      "before_text": "식탁 자리에 기본 등기구가 설치됩니다.",
+      "after_text": "식탁 위에 외산 펜던트 조명(플로스 1800)이 달립니다. 인테리어 포인트가 되지만, 입주 후 별도 구매·설치도 가능한 항목입니다.",
+      "cautions": [
+        "외산 식탁 펜던트 조명이 설치됩니다.",
+        "해당 옵션 선택 시 타입별 조명기구의 규격이 상이합니다. (59타입: 600mm / 59A키친허브·76·84·128타입: 1,200mm / 84A키친허브·115·128키친허브: 1,800mm)",
+        "해당 옵션 미선택 시 기본형 식탁조명이 설치되며, 세대타입별 수량 및 형태가 상이할 수 있습니다.",
+        "펜던트 조명기구는 설치장소의 층고차 등에 따라 다소 흔들림이 발생할 수 있습니다."
+      ],
+      "mark": null,
+      "star": false
+    },
+    {
+      "id": "living",
+      "category_id": "light",
+      "name": "거실조명 고급화",
+      "detail": "우물천장 4면 리니어 간접조명",
+      "price": 2160000,
+      "is_choice": false,
+      "variants": null,
+      "free": false,
+      "vr_number": 25,
+      "before_image": "https://cdn.vrapoint.co.kr/projects/banghwa6/union/260629/popup/115_0_opt_25_0.webp",
+      "after_image": "https://cdn.vrapoint.co.kr/projects/banghwa6/union/260629/popup/115_0_opt_25_1.webp",
+      "before_text": "거실 천장에 기본 등기구가 설치됩니다.",
+      "after_text": "우물천장 네 면에 리니어 간접조명이 들어가 천장이 떠 보입니다.",
+      "cautions": [
+        "해당 옵션 선택 시 거실 우물천장 4면에 리니어 조명이 설치되며, 기본제공되는 중앙 직부등은 미설치됩니다.",
+        "리니어 조명의 하부(직부) 조명은 색온도 및 조도 조절이 가능하며, 상부(간접) 조명은 ON/OFF 기능만 적용됩니다.",
+        "해당 옵션 미선택 시 기본형 직부등과 일반 간접등이 설치되며, 타입별로 수량 및 규격이 상이합니다."
+      ],
+      "mark": null,
+      "star": false
+    }
+  ],
+  "option_dependencies": [
+    {
+      "base_option": "clean",
+      "related_option": "door",
+      "type": "exclusive",
+      "reason": "클린현관과 현관자동중문은 중복 선택 불가"
+    },
+    {
+      "base_option": "kfurn",
+      "related_option": "kitchen",
+      "type": "dependent",
+      "reason": "외산주방가구 대면형(b)은 대면형주방을 함께 골라야 시공됨"
+    },
+    {
+      "base_option": "artwall",
+      "related_option": "multi",
+      "type": "dependent",
+      "reason": "거실복도 아트월(멀티룸형 b)은 멀티룸을 함께 골라야 시공됨"
+    },
+    {
+      "base_option": "light",
+      "related_option": "next",
+      "type": "dependent",
+      "reason": "감성조명(넥스트퍼니처형 b)은 넥스트퍼니처를 함께 골라야 시공됨"
+    },
+    {
+      "base_option": "floor",
+      "related_option": "nextfloor",
+      "type": "exclusive",
+      "reason": "외산 원목마루와 넥스트마루는 하나만 시공(마루 택1)"
+    }
+  ]
+}

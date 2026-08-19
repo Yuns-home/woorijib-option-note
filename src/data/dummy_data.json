@@ -1,0 +1,356 @@
+{
+  "option_stats": [
+    {
+      "option_id": "clean",
+      "criteria": "전용 84~115㎡ · 수도권 · 최근 2년 입주",
+      "select_rate": 52,
+      "sample_households": 1240
+    },
+    {
+      "option_id": "door",
+      "criteria": "전용 84~115㎡ · 수도권 · 최근 2년 입주",
+      "select_rate": 61,
+      "sample_households": 1240
+    },
+    {
+      "option_id": "multi",
+      "criteria": "전용 84~115㎡ · 수도권 · 최근 2년 입주",
+      "select_rate": 44,
+      "sample_households": 1240
+    },
+    {
+      "option_id": "next",
+      "criteria": "전용 84~115㎡ · 수도권 · 최근 2년 입주",
+      "select_rate": 38,
+      "sample_households": 1240
+    },
+    {
+      "option_id": "kitchen",
+      "criteria": "전용 84~115㎡ · 수도권 · 최근 2년 입주",
+      "select_rate": 57,
+      "sample_households": 1240
+    },
+    {
+      "option_id": "boutique",
+      "criteria": "전용 84~115㎡ · 수도권 · 최근 2년 입주",
+      "select_rate": 41,
+      "sample_households": 1240
+    },
+    {
+      "option_id": "kfurn",
+      "criteria": "전용 84~115㎡ · 수도권 · 최근 2년 입주",
+      "select_rate": 22,
+      "sample_households": 1240
+    },
+    {
+      "option_id": "bedroom",
+      "criteria": "전용 84~115㎡ · 수도권 · 최근 2년 입주",
+      "select_rate": 49,
+      "sample_households": 1240
+    },
+    {
+      "option_id": "tile",
+      "criteria": "전용 84~115㎡ · 수도권 · 최근 2년 입주",
+      "select_rate": 70,
+      "sample_households": 1240
+    },
+    {
+      "option_id": "artwall",
+      "criteria": "전용 84~115㎡ · 수도권 · 최근 2년 입주",
+      "select_rate": 33,
+      "sample_households": 1240
+    },
+    {
+      "option_id": "nextfloor",
+      "criteria": "전용 84~115㎡ · 수도권 · 최근 2년 입주",
+      "select_rate": 65,
+      "sample_households": 1240
+    },
+    {
+      "option_id": "floor",
+      "criteria": "전용 84~115㎡ · 수도권 · 최근 2년 입주",
+      "select_rate": 12,
+      "sample_households": 1240
+    },
+    {
+      "option_id": "entry",
+      "criteria": "전용 84~115㎡ · 수도권 · 최근 2년 입주",
+      "select_rate": 35,
+      "sample_households": 1240
+    },
+    {
+      "option_id": "ac",
+      "criteria": "전용 84~115㎡ · 수도권 · 최근 2년 입주",
+      "select_rate": 78,
+      "sample_households": 1240
+    },
+    {
+      "option_id": "induction",
+      "criteria": "전용 84~115㎡ · 수도권 · 최근 2년 입주",
+      "select_rate": 55,
+      "sample_households": 1240
+    },
+    {
+      "option_id": "dish",
+      "criteria": "전용 84~115㎡ · 수도권 · 최근 2년 입주",
+      "select_rate": 63,
+      "sample_households": 1240
+    },
+    {
+      "option_id": "oven",
+      "criteria": "전용 84~115㎡ · 수도권 · 최근 2년 입주",
+      "select_rate": 29,
+      "sample_households": 1240
+    },
+    {
+      "option_id": "light",
+      "criteria": "전용 84~115㎡ · 수도권 · 최근 2년 입주",
+      "select_rate": 47,
+      "sample_households": 1240
+    },
+    {
+      "option_id": "dining",
+      "criteria": "전용 84~115㎡ · 수도권 · 최근 2년 입주",
+      "select_rate": 31,
+      "sample_households": 1240
+    },
+    {
+      "option_id": "living",
+      "criteria": "전용 84~115㎡ · 수도권 · 최근 2년 입주",
+      "select_rate": 58,
+      "sample_households": 1240
+    }
+  ],
+  "family_selections": [
+    {
+      "user": "김민석(아들)",
+      "role": "세대주",
+      "option_id": "door",
+      "selected": true,
+      "reason": "어머니 계셔서 겨울 냉기 차단이 중요해요",
+      "status": "개인의견"
+    },
+    {
+      "user": "김순자(어머니)",
+      "role": "가족",
+      "option_id": "door",
+      "selected": true,
+      "reason": "현관 분리되면 아늑할 것 같아",
+      "status": "개인의견"
+    },
+    {
+      "user": "김민석(아들)",
+      "role": "세대주",
+      "option_id": "kitchen",
+      "selected": true,
+      "reason": "손님 자주 와서 대면형이 좋을 듯",
+      "status": "개인의견"
+    },
+    {
+      "user": "김순자(어머니)",
+      "role": "가족",
+      "option_id": "kitchen",
+      "selected": false,
+      "reason": "냄새가 거실로 퍼지는 게 신경 쓰여",
+      "status": "개인의견"
+    },
+    {
+      "user": "김민석(아들)",
+      "role": "세대주",
+      "option_id": "dish",
+      "selected": true,
+      "reason": "설거지 부담 줄이고 싶어요",
+      "status": "최종확정"
+    }
+  ],
+  "option_comments": [
+    {
+      "option_id": "kitchen",
+      "author": "익명1",
+      "content": "대면형 고민했는데 78%가 시스템에어컨 같이 하시더라고요. 저희도 했어요",
+      "created": "2026-05-01"
+    },
+    {
+      "option_id": "kitchen",
+      "author": "익명2",
+      "content": "냄새 걱정했는데 독립형 후드라 생각보다 괜찮았어요",
+      "created": "2026-05-03"
+    },
+    {
+      "option_id": "door",
+      "author": "익명3",
+      "content": "어르신 계신 집은 자동중문 강추합니다. 겨울에 확실히 따뜻해요",
+      "created": "2026-04-28"
+    },
+    {
+      "option_id": "floor",
+      "author": "익명4",
+      "content": "원목마루 예쁘지만 아이 있으면 스크래치 각오하셔야…",
+      "created": "2026-05-10"
+    }
+  ],
+  "essential_items": [
+    {
+      "name": "냉장고",
+      "category": "가전",
+      "base_essential": 95,
+      "linked_option": null,
+      "community_field": "가전",
+      "note": "거의 모든 가정 필수"
+    },
+    {
+      "name": "세탁기",
+      "category": "가전",
+      "base_essential": 93,
+      "linked_option": null,
+      "community_field": "가전",
+      "note": "거의 모든 가정 필수"
+    },
+    {
+      "name": "건조기",
+      "category": "가전",
+      "base_essential": 72,
+      "linked_option": null,
+      "community_field": "가전",
+      "note": "맞벌이·자녀 가정 선호 상승"
+    },
+    {
+      "name": "김치냉장고",
+      "category": "가전",
+      "base_essential": 68,
+      "linked_option": null,
+      "community_field": "가전",
+      "note": "한국 가정 준비율 높음"
+    },
+    {
+      "name": "전기오븐",
+      "category": "가전",
+      "base_essential": 35,
+      "linked_option": "oven",
+      "community_field": "가전",
+      "note": "옵션 미선택 시 별도 구매 대상"
+    },
+    {
+      "name": "식기세척기",
+      "category": "가전",
+      "base_essential": 58,
+      "linked_option": "dish",
+      "community_field": "가전",
+      "note": "옵션 미선택 시 별도 구매 대상"
+    },
+    {
+      "name": "공기청정기",
+      "category": "가전",
+      "base_essential": 66,
+      "linked_option": null,
+      "community_field": "가전",
+      "note": "어린 자녀 가정 우선순위 상승"
+    },
+    {
+      "name": "거실 조명",
+      "category": "조명",
+      "base_essential": 40,
+      "linked_option": "living",
+      "community_field": "조명",
+      "note": "옵션 미선택 시 별도 설치 가능"
+    },
+    {
+      "name": "중문",
+      "category": "인테리어",
+      "base_essential": 45,
+      "linked_option": "door",
+      "community_field": "중문",
+      "note": "옵션 미선택 시 사설 시공 대상"
+    },
+    {
+      "name": "붙박이장",
+      "category": "가구",
+      "base_essential": 50,
+      "linked_option": "bedroom",
+      "community_field": "가구",
+      "note": "수납 부족 시 별도 제작"
+    }
+  ],
+  "item_prep_stats": [
+    {
+      "item": "냉장고",
+      "criteria": "전용 84~115㎡ · 수도권",
+      "prep_rate": 95,
+      "sample": 1240
+    },
+    {
+      "item": "세탁기",
+      "criteria": "전용 84~115㎡ · 수도권",
+      "prep_rate": 93,
+      "sample": 1240
+    },
+    {
+      "item": "건조기",
+      "criteria": "전용 84~115㎡ · 수도권",
+      "prep_rate": 72,
+      "sample": 1240
+    },
+    {
+      "item": "김치냉장고",
+      "criteria": "전용 84~115㎡ · 수도권",
+      "prep_rate": 68,
+      "sample": 1240
+    },
+    {
+      "item": "전기오븐",
+      "criteria": "전용 84~115㎡ · 수도권",
+      "prep_rate": 35,
+      "sample": 1240
+    },
+    {
+      "item": "식기세척기",
+      "criteria": "전용 84~115㎡ · 수도권",
+      "prep_rate": 58,
+      "sample": 1240
+    },
+    {
+      "item": "공기청정기",
+      "criteria": "전용 84~115㎡ · 수도권",
+      "prep_rate": 66,
+      "sample": 1240
+    },
+    {
+      "item": "거실 조명",
+      "criteria": "전용 84~115㎡ · 수도권",
+      "prep_rate": 40,
+      "sample": 1240
+    },
+    {
+      "item": "중문",
+      "criteria": "전용 84~115㎡ · 수도권",
+      "prep_rate": 45,
+      "sample": 1240
+    },
+    {
+      "item": "붙박이장",
+      "criteria": "전용 84~115㎡ · 수도권",
+      "prep_rate": 50,
+      "sample": 1240
+    }
+  ],
+  "community_links": [
+    {
+      "field": "조명",
+      "url": "https://cafe.naver.com/example-lighting",
+      "status": "진행중",
+      "title": "엘라빈 입주예정 - 조명 공동구매"
+    },
+    {
+      "field": "가전",
+      "url": "https://cafe.naver.com/example-appliance",
+      "status": "모집예정",
+      "title": "엘라빈 입주예정 - 가전 공동구매"
+    },
+    {
+      "field": "중문",
+      "url": "https://cafe.naver.com/example-door",
+      "status": "진행중",
+      "title": "엘라빈 입주예정 - 중문 공동구매"
+    }
+  ]
+}
