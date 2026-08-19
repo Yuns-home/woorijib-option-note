@@ -4,6 +4,8 @@ import { getExclusivePartners } from '../utils/dependencyRules'
 
 const SelectionContext = createContext(null)
 
+const GUEST_USER = 'guest'
+
 function priceOf(option, variantId) {
   if (option.is_choice && option.variants?.length) {
     const variant =
@@ -11,6 +13,37 @@ function priceOf(option, variantId) {
     return variant.price
   }
   return option.price
+}
+
+async function persistSelected(optionId, variantId) {
+  try {
+    const { error } = await supabase.from('selections').upsert(
+      {
+        user_name: GUEST_USER,
+        option_id: optionId,
+        selected: true,
+        variant_id: variantId,
+        status: '개인의견',
+      },
+      { onConflict: 'user_name,option_id' }
+    )
+    if (error) throw error
+  } catch (err) {
+    console.error('[selections] 저장 실패:', err)
+  }
+}
+
+async function persistDeselected(optionId) {
+  try {
+    const { error } = await supabase
+      .from('selections')
+      .delete()
+      .eq('user_name', GUEST_USER)
+      .eq('option_id', optionId)
+    if (error) throw error
+  } catch (err) {
+    console.error('[selections] 삭제 실패:', err)
+  }
 }
 
 export function SelectionProvider({ children }) {
@@ -22,30 +55,43 @@ export function SelectionProvider({ children }) {
   useEffect(() => {
     let cancelled = false
 
-    async function loadCatalog() {
-      const [categoriesRes, optionsRes, dependenciesRes] = await Promise.all([
-        supabase.from('option_categories').select('*').order('sort_order'),
-        supabase.from('options').select('*'),
-        supabase.from('option_dependencies').select('*'),
-      ])
+    async function loadAll() {
+      const [categoriesRes, optionsRes, dependenciesRes, selectionsRes] =
+        await Promise.all([
+          supabase.from('option_categories').select('*').order('sort_order'),
+          supabase.from('options').select('*'),
+          supabase.from('option_dependencies').select('*'),
+          supabase.from('selections').select('*').eq('user_name', GUEST_USER),
+        ])
 
       if (categoriesRes.error) throw categoriesRes.error
       if (optionsRes.error) throw optionsRes.error
       if (dependenciesRes.error) throw dependenciesRes.error
 
-      if (!cancelled) {
-        setCatalog({
-          categories: categoriesRes.data,
-          allOptions: optionsRes.data,
-          dependencies: dependenciesRes.data,
-          optionsById: Object.fromEntries(
-            optionsRes.data.map((opt) => [opt.id, opt])
-          ),
-        })
+      if (cancelled) return
+
+      setCatalog({
+        categories: categoriesRes.data,
+        allOptions: optionsRes.data,
+        dependencies: dependenciesRes.data,
+        optionsById: Object.fromEntries(
+          optionsRes.data.map((opt) => [opt.id, opt])
+        ),
+      })
+
+      if (selectionsRes.error) {
+        console.error('[selections] 불러오기 실패:', selectionsRes.error)
+      } else {
+        const restored = Object.fromEntries(
+          selectionsRes.data
+            .filter((row) => row.selected)
+            .map((row) => [row.option_id, { selected: true, variantId: row.variant_id }])
+        )
+        setSelections(restored)
       }
     }
 
-    loadCatalog().catch((err) => {
+    loadAll().catch((err) => {
       if (!cancelled) setLoadError(err)
     })
 
@@ -63,11 +109,13 @@ export function SelectionProvider({ children }) {
       if (isSelected) {
         delete next[optionId]
         setNotice(null)
+        persistDeselected(optionId)
         return next
       }
 
       const defaultVariantId = option.is_choice ? option.variants[0].id : null
       next[optionId] = { selected: true, variantId: defaultVariantId }
+      persistSelected(optionId, defaultVariantId)
 
       const exclusivePartners = getExclusivePartners(optionId, catalog.dependencies)
       const removedPartner = exclusivePartners.find((id) => next[id]?.selected)
@@ -76,6 +124,7 @@ export function SelectionProvider({ children }) {
         setNotice(
           `'${catalog.optionsById[removedPartner].name}' 옵션은 함께 선택할 수 없어 자동 해제되었습니다.`
         )
+        persistDeselected(removedPartner)
       } else {
         setNotice(null)
       }
@@ -89,6 +138,7 @@ export function SelectionProvider({ children }) {
       ...prev,
       [optionId]: { selected: true, variantId },
     }))
+    persistSelected(optionId, variantId)
   }
 
   const totalPrice = useMemo(() => {
