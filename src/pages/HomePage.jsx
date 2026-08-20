@@ -2,13 +2,13 @@ import { Link } from 'react-router-dom'
 import { useSelection } from '../context/SelectionContext'
 
 const CONTRACT_DDAY = 15
-const TOTAL_ITEMS = 12
-const DONE_ITEMS = 9
 
 export default function HomePage() {
   const { allOptions, selectedCount } = useSelection()
   const undecidedCount = Math.max(allOptions.length - selectedCount, 0)
-  const progressPercent = Math.round((DONE_ITEMS / TOTAL_ITEMS) * 100)
+  const progressPercent = allOptions.length
+    ? Math.round((selectedCount / allOptions.length) * 100)
+    : 0
 
   return (
     <div className="mx-auto max-w-3xl px-6 py-12 lg:px-12 lg:py-16">
@@ -50,8 +50,8 @@ export default function HomePage() {
         </div>
 
         <div className="mt-8 flex items-center justify-between text-sm tabular text-charcoal-soft">
-          <span>전체 {TOTAL_ITEMS}개 항목</span>
-          <span>{DONE_ITEMS}개 완료</span>
+          <span>전체 {allOptions.length}개 항목</span>
+          <span>{selectedCount}개 선택</span>
         </div>
         <div className="mt-2 h-2.5 w-full overflow-hidden rounded-full bg-warmgray-200">
           <div
