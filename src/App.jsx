@@ -12,6 +12,7 @@ import FamilyOpinionPage from './pages/FamilyOpinionPage'
 import MoveInPrepPage from './pages/MoveInPrepPage'
 import FinalSubmitPage from './pages/FinalSubmitPage'
 import AiConsultPage from './pages/AiConsultPage'
+import StatsPage from './pages/StatsPage'
 
 // 앱 본체(옵션 선택 흐름). 이름이 있어야 진입 가능.
 // SelectionProvider/AiConsultProvider는 userName으로 데이터를 불러오므로
@@ -44,6 +45,7 @@ function App() {
           <Route index element={<HomePage />} />
           <Route path="ai-consult" element={<AiConsultPage />} />
           <Route path="options" element={<OptionSelectPage />} />
+          <Route path="stats" element={<StatsPage />} />
           <Route path="family" element={<FamilyOpinionPage />} />
           <Route path="summary" element={<SummaryPage />} />
           <Route path="move-in" element={<MoveInPrepPage />} />

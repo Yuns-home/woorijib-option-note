@@ -5,6 +5,7 @@ import CompareView from '../compare/CompareView'
 import VariantSelector from './VariantSelector'
 import DependencyNotice from './DependencyNotice'
 import JudgmentBadge from '../aiConsult/JudgmentBadge'
+import { getSelectRate, STATS_SAMPLE } from '../../data/optionStats'
 
 export default function OptionDetail({ option }) {
   const { categories, optionsById, dependencies, selections, toggleOption, selectVariant, priceOf } =
@@ -18,6 +19,7 @@ export default function OptionDetail({ option }) {
     selection?.variantId ?? (option.is_choice ? option.variants[0].id : null)
   const price = priceOf(option, activeVariantId)
   const judgment = judgments[option.id]
+  const selectRate = getSelectRate(option.id)
 
   return (
     <div className="flex h-full flex-col">
@@ -35,6 +37,24 @@ export default function OptionDetail({ option }) {
         <p className="mt-3 tabular text-xl font-semibold text-point">
           {formatPrice(price)}
         </p>
+
+        {selectRate != null && (
+          <div className="mt-4 rounded-xl bg-warmgray-100 px-4 py-3">
+            <div className="flex items-center justify-between text-sm">
+              <span className="text-charcoal-soft">비슷한 조건 입주자 선택률</span>
+              <span className="tabular font-semibold text-point">{selectRate}%</span>
+            </div>
+            <div className="mt-2 h-2 w-full overflow-hidden rounded-full bg-warmgray-200">
+              <div
+                className="h-full rounded-full bg-point"
+                style={{ width: `${selectRate}%` }}
+              />
+            </div>
+            <p className="mt-1.5 text-xs text-charcoal-soft">
+              {STATS_SAMPLE.toLocaleString()}가구 기준 · 참고용 예시 데이터
+            </p>
+          </div>
+        )}
 
         {judgment && (
           <div className="mt-4">

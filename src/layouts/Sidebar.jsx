@@ -5,9 +5,10 @@ const menuItems = [
   { to: '/', label: '홈', end: true },
   { to: '/ai-consult', label: 'AI 옵션 상담' },
   { to: '/options', label: '옵션 고르기' },
+  { to: '/stats', label: '다른 입주자 선택' },
   { to: '/family', label: '가족 의견' },
   { to: '/summary', label: '선택 요약' },
-  { to: '/move-in', label: '입주 준비' },
+  { to: '/move-in', label: '따로 준비할 것' },
   { to: '/final-submit', label: '최종 제출' },
 ]
 

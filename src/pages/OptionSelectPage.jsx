@@ -1,4 +1,5 @@
 import { useMemo, useState } from 'react'
+import { Link } from 'react-router-dom'
 import { useSelection } from '../context/SelectionContext'
 import { formatPrice } from '../utils/formatPrice'
 import CategoryTabs from '../components/options/CategoryTabs'
@@ -35,6 +36,23 @@ export default function OptionSelectPage() {
             activeId={activeCategoryId}
             onChange={handleCategoryChange}
           />
+          <div className="px-4 pt-3 lg:px-5">
+            <Link
+              to="/stats"
+              className="flex items-center justify-center gap-2 rounded-lg border border-warmgray-200 py-2.5 text-sm font-medium text-charcoal-soft transition-colors hover:bg-warmgray-100"
+            >
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M4 20V10M10 20V4M16 20v-7M20 20H2"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+              다른 입주자들은 어떻게 골랐을까요?
+            </Link>
+          </div>
           <div className="min-h-0 flex-1 space-y-3 overflow-y-auto px-4 py-4 lg:px-5">
             {optionsInCategory.map((option) => {
               const selection = selections[option.id]
