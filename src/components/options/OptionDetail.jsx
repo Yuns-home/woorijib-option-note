@@ -5,6 +5,7 @@ import CompareView from '../compare/CompareView'
 import VariantSelector from './VariantSelector'
 import DependencyNotice from './DependencyNotice'
 import JudgmentBadge from '../aiConsult/JudgmentBadge'
+import ReasonInput from './ReasonInput'
 import { getSelectRate, STATS_SAMPLE } from '../../data/optionStats'
 
 export default function OptionDetail({ option }) {
@@ -89,6 +90,8 @@ export default function OptionDetail({ option }) {
             />
           </div>
         )}
+
+        {isSelected && <ReasonInput optionId={option.id} />}
 
         <div className="mt-6">
           <DependencyNotice

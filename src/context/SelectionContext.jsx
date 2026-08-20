@@ -14,18 +14,21 @@ function priceOf(option, variantId) {
   return option.price
 }
 
-async function persistSelected(userName, optionId, variantId) {
+async function persistSelected(userName, optionId, variantId, reason) {
   try {
-    const { error } = await supabase.from('selections').upsert(
-      {
-        user_name: userName,
-        option_id: optionId,
-        selected: true,
-        variant_id: variantId,
-        status: '개인의견',
-      },
-      { onConflict: 'user_name,option_id' }
-    )
+    const payload = {
+      user_name: userName,
+      option_id: optionId,
+      selected: true,
+      variant_id: variantId,
+      status: '개인의견',
+    }
+    // reason이 명시적으로 전달된 경우에만 덮어씀 (선택 토글 시 기존 이유를 지우지 않도록)
+    if (reason !== undefined) payload.reason = reason
+
+    const { error } = await supabase
+      .from('selections')
+      .upsert(payload, { onConflict: 'user_name,option_id' })
     if (error) throw error
   } catch (err) {
     console.error('[selections] 저장 실패:', err)
@@ -85,7 +88,10 @@ export function SelectionProvider({ children }) {
         const restored = Object.fromEntries(
           selectionsRes.data
             .filter((row) => row.selected)
-            .map((row) => [row.option_id, { selected: true, variantId: row.variant_id }])
+            .map((row) => [
+              row.option_id,
+              { selected: true, variantId: row.variant_id, reason: row.reason ?? '' },
+            ])
         )
         setSelections(restored)
       }
@@ -136,9 +142,19 @@ export function SelectionProvider({ children }) {
   function selectVariant(optionId, variantId) {
     setSelections((prev) => ({
       ...prev,
-      [optionId]: { selected: true, variantId },
+      [optionId]: { ...prev[optionId], selected: true, variantId },
     }))
     persistSelected(userName, optionId, variantId)
+  }
+
+  // 선택 이유 저장 (이미 선택된 옵션에만 의미 있음)
+  function saveReason(optionId, reason) {
+    setSelections((prev) => {
+      const current = prev[optionId]
+      if (!current?.selected) return prev
+      persistSelected(userName, optionId, current.variantId, reason)
+      return { ...prev, [optionId]: { ...current, reason } }
+    })
   }
 
   const totalPrice = useMemo(() => {
@@ -179,6 +195,7 @@ export function SelectionProvider({ children }) {
     selections,
     toggleOption,
     selectVariant,
+    saveReason,
     totalPrice,
     selectedCount,
     notice,
