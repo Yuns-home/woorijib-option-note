@@ -1,6 +1,7 @@
 import { Routes, Route } from 'react-router-dom'
 import MainLayout from './layouts/MainLayout'
 import { SelectionProvider } from './context/SelectionContext'
+import { AiConsultProvider } from './context/AiConsultContext'
 import PlaceholderPage from './pages/PlaceholderPage'
 import HomePage from './pages/HomePage'
 import LandingPage from './pages/LandingPage'
@@ -14,18 +15,20 @@ import AiConsultPage from './pages/AiConsultPage'
 function App() {
   return (
     <SelectionProvider>
-      <Routes>
-        <Route path="landing" element={<LandingPage />} />
-        <Route element={<MainLayout />}>
-          <Route index element={<HomePage />} />
-          <Route path="ai-consult" element={<AiConsultPage />} />
-          <Route path="options" element={<OptionSelectPage />} />
-          <Route path="family" element={<FamilyOpinionPage />} />
-          <Route path="summary" element={<SummaryPage />} />
-          <Route path="move-in" element={<MoveInPrepPage />} />
-          <Route path="final-submit" element={<FinalSubmitPage />} />
-        </Route>
-      </Routes>
+      <AiConsultProvider>
+        <Routes>
+          <Route path="landing" element={<LandingPage />} />
+          <Route element={<MainLayout />}>
+            <Route index element={<HomePage />} />
+            <Route path="ai-consult" element={<AiConsultPage />} />
+            <Route path="options" element={<OptionSelectPage />} />
+            <Route path="family" element={<FamilyOpinionPage />} />
+            <Route path="summary" element={<SummaryPage />} />
+            <Route path="move-in" element={<MoveInPrepPage />} />
+            <Route path="final-submit" element={<FinalSubmitPage />} />
+          </Route>
+        </Routes>
+      </AiConsultProvider>
     </SelectionProvider>
   )
 }

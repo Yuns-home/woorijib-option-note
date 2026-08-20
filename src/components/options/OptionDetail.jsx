@@ -1,12 +1,15 @@
 import { useSelection } from '../../context/SelectionContext'
+import { useAiConsult } from '../../context/AiConsultContext'
 import { formatPrice } from '../../utils/formatPrice'
 import CompareView from '../compare/CompareView'
 import VariantSelector from './VariantSelector'
 import DependencyNotice from './DependencyNotice'
+import JudgmentBadge from '../aiConsult/JudgmentBadge'
 
 export default function OptionDetail({ option }) {
   const { categories, optionsById, dependencies, selections, toggleOption, selectVariant, priceOf } =
     useSelection()
+  const { judgments } = useAiConsult()
 
   const categoryName = categories.find((c) => c.id === option.category_id)?.name
   const selection = selections[option.id]
@@ -14,6 +17,7 @@ export default function OptionDetail({ option }) {
   const activeVariantId =
     selection?.variantId ?? (option.is_choice ? option.variants[0].id : null)
   const price = priceOf(option, activeVariantId)
+  const judgment = judgments[option.id]
 
   return (
     <div className="flex h-full flex-col">
@@ -22,11 +26,6 @@ export default function OptionDetail({ option }) {
           <span className="rounded-full bg-warmgray-100 px-3 py-1 text-sm text-charcoal-soft">
             {categoryName} 옵션
           </span>
-          {option.star && (
-            <span className="rounded-full bg-point-soft px-3 py-1 text-sm font-medium text-point">
-              ✓ 우리 가족 기준 추천 옵션
-            </span>
-          )}
         </div>
 
         <h2 className="mt-4 text-2xl font-semibold">{option.name}</h2>
@@ -36,6 +35,12 @@ export default function OptionDetail({ option }) {
         <p className="mt-3 tabular text-xl font-semibold text-point">
           {formatPrice(price)}
         </p>
+
+        {judgment && (
+          <div className="mt-4">
+            <JudgmentBadge judgment={judgment.judgment} reason={judgment.reason} />
+          </div>
+        )}
 
         <div className="mt-6">
           <CompareView

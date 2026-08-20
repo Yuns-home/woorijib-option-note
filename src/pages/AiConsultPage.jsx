@@ -1,8 +1,11 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { AI_CONSULT_QUESTIONS, ROOM_LIST } from '../data/aiConsultQuestions'
 import ProgressHeader from '../components/aiConsult/ProgressHeader'
 import QuestionCard from '../components/aiConsult/QuestionCard'
+import ResultsList from '../components/aiConsult/ResultsList'
+import { useAiConsult } from '../context/AiConsultContext'
+import { useSelection } from '../context/SelectionContext'
 
 function isAnswered(question, answer) {
   if (question.type === 'roomUser') {
@@ -16,10 +19,23 @@ export default function AiConsultPage() {
   const [currentIndex, setCurrentIndex] = useState(0)
   const [completed, setCompleted] = useState(false)
 
+  const { judgments, loading, error, runConsult } = useAiConsult()
+  const { optionsById } = useSelection()
+
   const total = AI_CONSULT_QUESTIONS.length
   const currentQuestion = AI_CONSULT_QUESTIONS[currentIndex]
   const currentAnswer = answers[currentQuestion?.id]
   const canProceed = currentQuestion ? isAnswered(currentQuestion, currentAnswer) : false
+
+  // 질문에 모두 답하고 완료 화면으로 넘어가면, 그 시점의 답변으로 AI 상담을 실행한다.
+  useEffect(() => {
+    if (completed) {
+      runConsult(answers).catch(() => {
+        // 에러는 context의 error 상태로 노출되어 화면에 표시됨
+      })
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [completed])
 
   function handleAnswer(value) {
     setAnswers((prev) => ({ ...prev, [currentQuestion.id]: value }))
@@ -35,6 +51,11 @@ export default function AiConsultPage() {
 
   function handleBack() {
     setCurrentIndex((i) => Math.max(0, i - 1))
+  }
+
+  function handleRetake() {
+    setCompleted(false)
+    setCurrentIndex(0)
   }
 
   if (completed) {
@@ -53,21 +74,29 @@ export default function AiConsultPage() {
         </div>
         <h2 className="mt-6 text-2xl font-semibold">프로필 저장 완료</h2>
         <p className="mt-2 text-charcoal-soft">
-          질문 {total}개에 모두 답해 주셨습니다. 이 정보를 바탕으로 우리 가족에게 맞는
-          옵션을 안내해 드릴게요.
+          질문 {total}개에 모두 답해 주셨습니다. 우리 가족에게 맞는 옵션을 안내해 드릴게요.
         </p>
 
-        <div className="mt-8 rounded-xl border border-dashed border-warmgray-300 bg-warmgray-100 p-6 text-sm text-charcoal-soft">
-          AI 상담 결과는 다음 단계에서 연결됩니다.
-        </div>
+        {loading && (
+          <div className="mt-8 rounded-xl border border-dashed border-warmgray-300 bg-warmgray-100 p-6 text-sm text-charcoal-soft">
+            AI가 우리 가족 프로필을 바탕으로 옵션을 살펴보는 중입니다...
+          </div>
+        )}
+
+        {!loading && error && (
+          <div className="mt-8 rounded-xl border border-dashed border-warmgray-300 bg-warmgray-100 p-6 text-sm text-charcoal-soft">
+            상담 결과를 불러오지 못했습니다. 잠시 후 다시 시도해 주세요.
+          </div>
+        )}
+
+        {!loading && !error && Object.keys(judgments).length > 0 && (
+          <ResultsList judgments={judgments} optionsById={optionsById} />
+        )}
 
         <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:justify-center">
           <button
             type="button"
-            onClick={() => {
-              setCompleted(false)
-              setCurrentIndex(0)
-            }}
+            onClick={handleRetake}
             className="flex h-12 items-center justify-center rounded-xl border border-point px-6 text-[15px] font-medium text-point transition-colors hover:bg-point-soft"
           >
             답변 다시 하기
