@@ -38,7 +38,7 @@ export default function MoveInPrepPage() {
 
   return (
     <div className="mx-auto max-w-6xl px-6 py-10 lg:px-10 lg:py-14">
-      <h2 className="text-2xl font-semibold lg:text-3xl">입주 준비</h2>
+      <h2 className="text-2xl font-semibold lg:text-3xl">따로 준비할 것</h2>
       <p className="mt-2 text-charcoal-soft">
         옵션으로 선택하지 않은 항목과 대부분의 가정이 준비하는 생활필수품을 우선순위
         순으로 정리했습니다. 필요한 항목은 공동구매로 함께 준비해 보세요.
