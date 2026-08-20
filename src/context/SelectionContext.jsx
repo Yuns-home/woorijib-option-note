@@ -1,10 +1,9 @@
 import { createContext, useContext, useEffect, useMemo, useState } from 'react'
 import { supabase } from '../lib/supabase'
 import { getExclusivePartners } from '../utils/dependencyRules'
+import { useUser } from './UserContext'
 
 const SelectionContext = createContext(null)
-
-const GUEST_USER = 'guest'
 
 function priceOf(option, variantId) {
   if (option.is_choice && option.variants?.length) {
@@ -15,11 +14,11 @@ function priceOf(option, variantId) {
   return option.price
 }
 
-async function persistSelected(optionId, variantId) {
+async function persistSelected(userName, optionId, variantId) {
   try {
     const { error } = await supabase.from('selections').upsert(
       {
-        user_name: GUEST_USER,
+        user_name: userName,
         option_id: optionId,
         selected: true,
         variant_id: variantId,
@@ -33,12 +32,12 @@ async function persistSelected(optionId, variantId) {
   }
 }
 
-async function persistDeselected(optionId) {
+async function persistDeselected(userName, optionId) {
   try {
     const { error } = await supabase
       .from('selections')
       .delete()
-      .eq('user_name', GUEST_USER)
+      .eq('user_name', userName)
       .eq('option_id', optionId)
     if (error) throw error
   } catch (err) {
@@ -47,6 +46,7 @@ async function persistDeselected(optionId) {
 }
 
 export function SelectionProvider({ children }) {
+  const { userName } = useUser()
   const [catalog, setCatalog] = useState(null)
   const [loadError, setLoadError] = useState(null)
   const [selections, setSelections] = useState({})
@@ -61,7 +61,7 @@ export function SelectionProvider({ children }) {
           supabase.from('option_categories').select('*').order('sort_order'),
           supabase.from('options').select('*'),
           supabase.from('option_dependencies').select('*'),
-          supabase.from('selections').select('*').eq('user_name', GUEST_USER),
+          supabase.from('selections').select('*').eq('user_name', userName),
         ])
 
       if (categoriesRes.error) throw categoriesRes.error
@@ -98,7 +98,7 @@ export function SelectionProvider({ children }) {
     return () => {
       cancelled = true
     }
-  }, [])
+  }, [userName])
 
   function toggleOption(optionId) {
     setSelections((prev) => {
@@ -109,13 +109,13 @@ export function SelectionProvider({ children }) {
       if (isSelected) {
         delete next[optionId]
         setNotice(null)
-        persistDeselected(optionId)
+        persistDeselected(userName, optionId)
         return next
       }
 
       const defaultVariantId = option.is_choice ? option.variants[0].id : null
       next[optionId] = { selected: true, variantId: defaultVariantId }
-      persistSelected(optionId, defaultVariantId)
+      persistSelected(userName, optionId, defaultVariantId)
 
       const exclusivePartners = getExclusivePartners(optionId, catalog.dependencies)
       const removedPartner = exclusivePartners.find((id) => next[id]?.selected)
@@ -124,7 +124,7 @@ export function SelectionProvider({ children }) {
         setNotice(
           `'${catalog.optionsById[removedPartner].name}' 옵션은 함께 선택할 수 없어 자동 해제되었습니다.`
         )
-        persistDeselected(removedPartner)
+        persistDeselected(userName, removedPartner)
       } else {
         setNotice(null)
       }
@@ -138,7 +138,7 @@ export function SelectionProvider({ children }) {
       ...prev,
       [optionId]: { selected: true, variantId },
     }))
-    persistSelected(optionId, variantId)
+    persistSelected(userName, optionId, variantId)
   }
 
   const totalPrice = useMemo(() => {

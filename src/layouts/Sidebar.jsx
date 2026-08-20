@@ -1,4 +1,5 @@
 import { NavLink } from 'react-router-dom'
+import { useUser } from '../context/UserContext'
 
 const menuItems = [
   { to: '/', label: '홈', end: true },
@@ -11,6 +12,9 @@ const menuItems = [
 ]
 
 export default function Sidebar({ onNavigate }) {
+  const { userName, clearUser } = useUser()
+  const initial = userName ? userName.trim().charAt(0) : '?'
+
   return (
     <div className="flex h-full flex-col justify-between">
       <div>
@@ -43,13 +47,20 @@ export default function Sidebar({ onNavigate }) {
       <div className="border-t border-warmgray-200 px-6 py-5">
         <div className="flex items-center gap-3">
           <div className="flex h-10 w-10 items-center justify-center rounded-full bg-warmgray-200 text-sm text-charcoal-soft">
-            김
+            {initial}
           </div>
-          <div>
-            <p className="text-sm font-medium">김민석 님</p>
+          <div className="min-w-0">
+            <p className="truncate text-sm font-medium">{userName} 님</p>
             <p className="text-xs text-charcoal-soft">래미안 엘라빈 115㎡</p>
           </div>
         </div>
+        <button
+          type="button"
+          onClick={clearUser}
+          className="mt-3 text-xs text-charcoal-soft underline underline-offset-2 hover:text-point"
+        >
+          다른 이름으로 시작
+        </button>
       </div>
     </div>
   )
