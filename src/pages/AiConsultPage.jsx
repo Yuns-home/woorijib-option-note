@@ -4,6 +4,7 @@ import { AI_CONSULT_QUESTIONS, ROOM_LIST } from '../data/aiConsultQuestions'
 import ProgressHeader from '../components/aiConsult/ProgressHeader'
 import QuestionCard from '../components/aiConsult/QuestionCard'
 import ResultsList from '../components/aiConsult/ResultsList'
+import HouseLoader from '../components/aiConsult/HouseLoader'
 import { useAiConsult } from '../context/AiConsultContext'
 import { useSelection } from '../context/SelectionContext'
 
@@ -78,8 +79,8 @@ export default function AiConsultPage() {
         </p>
 
         {loading && (
-          <div className="mt-8 rounded-xl border border-dashed border-warmgray-300 bg-warmgray-100 p-6 text-sm text-charcoal-soft">
-            AI가 우리 가족 프로필을 바탕으로 옵션을 살펴보는 중입니다...
+          <div className="mt-8 rounded-xl border border-dashed border-warmgray-300 bg-warmgray-100 p-6">
+            <HouseLoader />
           </div>
         )}
 
