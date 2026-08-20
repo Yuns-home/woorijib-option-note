@@ -161,6 +161,14 @@
       "selected": true,
       "reason": "설거지 부담 줄이고 싶어요",
       "status": "최종확정"
+    },
+    {
+      "user": "김순자(어머니)",
+      "role": "가족",
+      "option_id": "dish",
+      "selected": true,
+      "reason": "설거지가 힘들어서 있으면 좋지",
+      "status": "개인의견"
     }
   ],
   "option_comments": [

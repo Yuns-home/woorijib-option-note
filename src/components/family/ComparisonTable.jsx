@@ -1,33 +1,53 @@
-export default function ComparisonTable({ optionName, categoryName, entries, isUnanimous, activeMember }) {
+export default function ComparisonTable({
+  optionId,
+  optionName,
+  categoryName,
+  entries,
+  isUnanimous,
+  decidedUser,
+  onDecide,
+}) {
+  const needsDecision = !isUnanimous && !decidedUser
+
   return (
-    <div className="rounded-2xl border border-warmgray-200 bg-white p-6">
+    <div
+      className={`rounded-2xl border bg-white p-6 ${
+        needsDecision ? 'border-rose-200' : 'border-warmgray-200'
+      }`}
+    >
       <div className="flex items-center justify-between">
         <div>
           <p className="text-sm text-charcoal-soft">{categoryName}</p>
           <p className="text-lg font-semibold">{optionName}</p>
         </div>
-        <span
-          className={`rounded-full px-3 py-1 text-sm font-medium ${
-            isUnanimous ? 'bg-point-soft text-point' : 'bg-rose-100 text-rose-700'
-          }`}
-        >
-          {isUnanimous ? '✓ 전원 일치' : '! 의견 불일치'}
-        </span>
+        {isUnanimous ? (
+          <span className="rounded-full bg-point-soft px-3 py-1 text-sm font-medium text-point">
+            ✓ 전원 일치
+          </span>
+        ) : decidedUser ? (
+          <span className="rounded-full bg-point-soft px-3 py-1 text-sm font-medium text-point">
+            ✓ 결정됨
+          </span>
+        ) : (
+          <span className="rounded-full bg-rose-100 px-3 py-1 text-sm font-medium text-rose-700">
+            ! 의견 불일치
+          </span>
+        )}
       </div>
 
-      <div className="mt-5 grid grid-cols-1 gap-4 sm:grid-cols-3">
+      <div className="mt-5 grid grid-cols-1 gap-4 sm:grid-cols-2">
         {entries.map((entry) => {
-          const isActive = entry.user === activeMember
+          const isChosen = decidedUser === entry.user
           const thumb = entry.selected ? entry.afterImage : entry.beforeImage
 
           return (
             <div
               key={entry.user}
               className={`relative overflow-hidden rounded-xl border p-4 ${
-                isActive ? 'border-charcoal' : 'border-warmgray-200'
+                isChosen ? 'border-point ring-1 ring-point' : 'border-warmgray-200'
               }`}
             >
-              {isActive && (
+              {isChosen && (
                 <span className="absolute right-3 top-3 flex h-6 w-6 items-center justify-center rounded-full bg-point text-white">
                   <svg width="12" height="12" viewBox="0 0 24 24" fill="none">
                     <path
@@ -62,10 +82,19 @@ export default function ComparisonTable({ optionName, categoryName, entries, isU
                 </div>
               )}
 
-              {entry.status === '최종확정' && (
-                <span className="mt-2 inline-block rounded-full bg-point-soft px-2.5 py-1 text-xs font-medium text-point">
-                  최종확정
-                </span>
+              {/* 불일치 항목에서만 "이 의견으로 결정" 버튼 */}
+              {!isUnanimous && (
+                <button
+                  type="button"
+                  onClick={() => onDecide(optionId, entry.user)}
+                  className={`mt-3 flex h-10 w-full items-center justify-center rounded-lg text-sm font-medium transition-colors ${
+                    isChosen
+                      ? 'bg-point text-white'
+                      : 'border border-point text-point hover:bg-point-soft'
+                  }`}
+                >
+                  {isChosen ? '이 의견으로 결정됨' : `${entry.user.split('(')[0]} 의견으로 결정`}
+                </button>
               )}
             </div>
           )
