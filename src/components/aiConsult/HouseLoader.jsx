@@ -1,6 +1,6 @@
 // 집이 선으로 그려지는 로딩 애니메이션 (지붕 → 벽 → 문 순서로 반복).
 // 색은 브랜드 딥그린(--color-point)을 참조하므로 디자인 시스템과 자동으로 일치.
-export default function HouseLoader({ size = 80, label = 'AI가 우리 가족 프로필을 바탕으로 옵션을 살펴보는 중입니다…' }) {
+export default function HouseLoader({ size = 80, label = 'AI 상담사가 우리 가족에게 꼭 맞는 옵션을 살펴보고 있습니다.' }) {
   return (
     <div className="flex flex-col items-center gap-5 py-4">
       <style>{`
