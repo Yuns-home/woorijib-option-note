@@ -1,5 +1,6 @@
 import { NavLink } from 'react-router-dom'
 import { useUser } from '../context/UserContext'
+import logoMark from '../assets/logo-mark.svg'
 
 const menuItems = [
   { to: '/', label: '홈', end: true },
@@ -19,9 +20,9 @@ export default function Sidebar({ onNavigate }) {
   return (
     <div className="flex h-full flex-col justify-between">
       <div>
-        <div className="px-6 py-8">
-          <p className="text-sm text-charcoal-soft">우리집</p>
-          <h1 className="text-xl font-semibold">옵션노트</h1>
+        <div className="flex items-center gap-3 px-6 py-8">
+          <img src={logoMark} alt="" className="h-10 w-10 shrink-0" />
+          <h1 className="text-lg font-semibold">우리집 옵션노트</h1>
         </div>
 
         <nav className="flex flex-col gap-1 px-3">
