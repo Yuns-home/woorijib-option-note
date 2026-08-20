@@ -3,6 +3,7 @@ import MainLayout from './layouts/MainLayout'
 import { SelectionProvider } from './context/SelectionContext'
 import PlaceholderPage from './pages/PlaceholderPage'
 import HomePage from './pages/HomePage'
+import LandingPage from './pages/LandingPage'
 import OptionSelectPage from './pages/OptionSelectPage'
 import SummaryPage from './pages/SummaryPage'
 import FamilyOpinionPage from './pages/FamilyOpinionPage'
@@ -14,6 +15,7 @@ function App() {
   return (
     <SelectionProvider>
       <Routes>
+        <Route path="landing" element={<LandingPage />} />
         <Route element={<MainLayout />}>
           <Route index element={<HomePage />} />
           <Route path="ai-consult" element={<AiConsultPage />} />
